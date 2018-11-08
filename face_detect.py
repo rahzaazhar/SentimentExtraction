@@ -1,7 +1,7 @@
 import numpy as np 
 import cv2
 image = cv2.imread('test1.jpeg')
-face_cascade = cv2.CascadeClassifier('/home/azhar/tensorflow/lib/python3.6/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 cv2.imshow('gray',gray)
 faces = face_cascade.detectMultiScale(gray,1.3,5)
