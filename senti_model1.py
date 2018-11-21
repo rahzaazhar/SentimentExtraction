@@ -74,7 +74,7 @@ sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
 datagen = ImageDataGenerator(rescale=1./255)
 train_generator = datagen.flow_from_directory(join(path,"train"),target_size=(48, 48),batch_size=32,class_mode='categorical')
 validate_generator = datagen.flow_from_directory(join(path,"validate"),target_size=(48, 48),batch_size=32,class_mode='categorical')
-test_generator = datagen.flow_from_directory(join(path,"test"),target_size=(48, 48, 3),batch_size=32,class_mode='categorical')
+test_generator = datagen.flow_from_directory(join(path,"test"),target_size=(48, 48),batch_size=32,class_mode='categorical')
 
 checkpointer1 = TensorBoard(log_dir='/home/azhar/sentiment_Extract_image/tensor_log')#make a folder named tensorlog and place its path here 
 checkpointer =  EarlyStopping(monitor='loss',min_delta=0.01,patience=10,verbose=1,mode='min')
