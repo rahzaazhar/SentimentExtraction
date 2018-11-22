@@ -130,7 +130,7 @@ emotion_model.fit_generator(train_generator,steps_per_epoch=940,epochs=35,verbos
 score=emotion_model.evaluate_generator(test_generator,steps=113,verbose=1)
 score1=emotion_model.evaluate_generator(train_generator,steps=113,verbose)
 print('test accuracy of the model:',score[1]*100)
-print('train accuracy of the model:',score[1]*100)
+print('train accuracy of the model:',score1[1]*100)
 emotion_model.save_weights("/home/azhar/projects/sentiment_Extract_image/weightsBN.h5")#path to weights
 emotion_model.save('/home/azhar/projects/sentiment_Extract_image/ModelBN.h5')#path to saved model
 
