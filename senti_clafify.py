@@ -14,7 +14,7 @@ import os
 import numpy as np
 import cv2
 
-path = "C:/Users/Nikhil/Desktop/Senti_extract/SentimentExtraction-master/Data"#path to folder with train,validate and test folders 
+path = "C:/Users/Nikhil/Desktop/Senti_extract/SentimentExtraction-master/Data"#specify path to folder with train,validate and test folders 
 maping = {0:'ANGRY', 1:'FEAR', 2:'HAPPY', 3:'NEUTRAL', 4:'SAD', 5:'SURPRISE'}
 
 
@@ -50,7 +50,8 @@ print(train_generator.class_indices)
 #checkpointer1 = TensorBoard(log_dir='/home/azhar/sentiment_Extract_image/tensor_log')#make a folder named tensorlog and place its path here 
 #checkpointer =  EarlyStopping(monitor='loss',min_delta=0.01,patience=10,verbose=1,mode='min')
 sentiment_model.compile(loss='categorical_crossentropy',optimizer=sgd,metrics=['accuracy'])
-sentiment_model.load_weights("C:/Users/Nikhil/Desktop/Senti_extract/SentimentExtraction-master/weights248.h5")#path to weights to be loaded
+sentiment_model.load_weights("C:/Users/Nikhil/Desktop/Senti_extract/SentimentExtraction-master/weights248.h5")#specify path to weights to be loaded
+#for training include below line
 #sentiment_model.fit_generator(train_generator,steps_per_epoch=940,epochs=100,verbose=1,validation_data=validate_generator,validation_steps=50,callbacks=[checkpointer1,checkpointer])
 score=sentiment_model.evaluate_generator(test_generator,steps=113,verbose=1)
 print('accuracy of the model:',score[1]*100)
