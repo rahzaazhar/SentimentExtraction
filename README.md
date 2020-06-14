@@ -12,7 +12,7 @@ data used https://www.kaggle.com/c/challenges-in-representation-learning-facial-
 * Download data from link provided
 * Extract file fer2013.csv and run
 ```
-python conv.py --cvs_path path/to/fer2013.csv
+python conv_image.py --csv_path path/to/fer2013.csv
 ```
 
 ## Training
