@@ -17,7 +17,7 @@ import os
 from time import time
 from matplotlib import pyplot as plt
 
-classifier=load_model('/home/azhar/projects/sentiment_Extract_image/ModelBN.h5')
+classifier=load_model('sentimodel.h5')
 layer_outputs = [layer.output for layer in classifier.layers[1:7]] # Extracts the outputs of the top 12 layers
 activation_model = Model(inputs=classifier.input, outputs=layer_outputs) # Creates a model that will return these outputs, given the model input
 activation_model.summary()
